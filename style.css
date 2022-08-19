@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Unica+One|Vollkorn');
+:root{
+    --ff-ss: 'Unica One';
+    --ff-s: 'red';
+    --clr-red: #c31;
+    --clr-black: rgba(black, 1);
+    --clr-gray: rgba(rgb(110, 105, 105), 1);
+}
+
+
+*, *::after,*::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    background-color: var(--clr-re);
+    height: 100vh;
+    font-size: 1rem;
+    font-family: var(--ff-ss);
+
+}
+
+.intro{
+    margin-top: 4rem;
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    transition: transform ease-in-out 500ms;
+    transform: scale(1,1);
+  
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--ff-ss);
+    text-transform: uppercase;
+    line-height: .9;
+    color: #c31;
+  }
+
+h1::before,h1::after{
+    content: '';
+    height: 100%;
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+h1::before{
+    background-color: var(--clr-red);
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+}
+
+h1::after{
+    background-color: wheat;
+    left: -.2em;
+    right: -.2em;
+    top: -25%;
+    z-index: -1;
+    height: 150%;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.4);
+}
+
+h1:hover::after{
+transform: scale(1.2,1.1);
+}
+
+.container{
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+  
+    margin: 1em;
+    position: relative;
+    background-color: rgba(0,0,0,.9);
+
+}
+
+.card::before, .card::after{
+    content: '';
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 4rem;
+    opacity: 1;
+    transition: transform ease-out 250ms;
+
+}
+
+.card::before{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    transform: scale(0,1);
+}
+
+.card::after{
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transform: scale(1,0);
+} 
+
+.card:hover::after{
+    transform: scale(1, 1.05);
+
+}
+
+.card:hover::before{
+    transform: scale(1.05,1);
+
+}
+.card__img{
+    max-width: 100%;
+    display: block;
+    transition: opacity ease-out 250ms
+}
+
+.card:hover .card__img{
+    opacity: .7;
+}
+
+/* .card:hover{
+    background-color: rgb(228, 0, 0);
+    transform: scale(1.2,1.2);
+} */
+
+.card__text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: opacity ease-out 250ms;
+    color: white;
+    opacity: 0;
+}
+
+.card__title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0;
+    font-weight: 900;
+  }
+
+  .card:hover .card__text{
+    opacity: 1;
+  }
+
+  .card__footer{
+    background-color: #f11;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .8;
+    transition: opacity ease-in-out 250ms;
+    max-height: 3rem;
+  }
+
+  .card__footer h2{
+    color: white;
+    font-size: 2em;
+    padding: .3em 0;
+  
+  }
+
+  .card:hover .card__footer{
+    opacity: 0;
+  }
